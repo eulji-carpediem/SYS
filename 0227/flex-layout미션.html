@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Main Layout (nav+main+aside)*/
+    .container {
+        display: flex;
+        flex: 1;
+        padding: 10px;
+        gap: 10px;
+        background-color: #fafafa;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 10px;
+    }
+
+    nav {
+      width: 200px;
+      padding: 15px;
+      background-color: #f3f5f7;
+      border: 1px solid #ccc;
+    }
+
+    nav ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    main {
+      flex: 1;
+      background-color: #fafafa;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .highlight-box {
+      margin-top: 10px;
+      padding: 15px;
+      background-color: #edf2fe;
+      border: 1px dashed #aebfd7;
+    }
+
+    .hint {
+      margin-top: 15px;
+    }
+
+    aside {
+      width: 200px;
+      padding: 15px;
+      background-color: #f9fbfc;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    머리부(Header)
+  </header>
+
+  <div class="container">
+    
+    <nav>
+      <strong>네비게이션(Nav)</strong>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>메인 콘텐츠(Main)</h1>
+
+      <div class="highlight-box">
+        양옆은 고정폭, 가운데는 가변폭!
+      </div>
+
+      <p class="hint">
+        Hint. 가운데 영역은 flex: 1로 남는 공간을 차지합니다.
+      </p>
+    </main>
+
+    <aside>
+      <strong>사이드바(Aside)</strong>
+      <p>공지/광고/프로필 등</p>
+    </aside>
+
+  </div>
+
+  <footer>
+    바닥부(Footer)
+  </footer>
+
+</body>
+</html>
