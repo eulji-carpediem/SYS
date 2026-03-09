@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            position: absolute;
+            width: 160px;
+            height: 240px;
+            left: 16px;
+            top: 16px;
+            background: #CA785C;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .imgBox {
+            position: absolute;
+            width: 100%;
+            height: 172px;
+            top: 0;
+            background: #FFFFFF;
+            overflow: hidden;
+        }
+
+        .image {
+            position: absolute;
+            width: 564px;
+            height: 1007px;
+            left: -221px;
+            top: -471px;
+            background: url('./assets/img2.jpg') center/cover no-repeat;
+        }
+
+        .text {
+            position: absolute;
+            font-family: 'Inter';
+            font-weight: 700;
+            letter-spacing: -0.005em;
+            color: #FFFFFF;
+        }
+
+        .title {
+            width: 83px;
+            height: 19px;
+            left: 8px;
+            top: 180px;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        .author {
+            width: 39px;
+            height: 17px;
+            left: 8px;
+            top: 215px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        .date {
+            width: 76px;
+            height: 17px;
+            left: 76px;
+            top: 215px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="imgBox">
+            <div class="image"></div>
+        </div>
+        <div class="text title">인테리어란?</div>
+        <div class="text author">김작가</div>
+        <div class="text date">2024.01.01</div>
+    </div>
+</body>
+
+</html>

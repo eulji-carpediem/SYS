@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            position: absolute;
+            width: 332px;
+            height: 100px;
+            left: 16px;
+            top: 16px;
+            background: #FFE4E4;
+            border-radius: 8px;
+
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        .left-box {
+            width: 160px;
+            height: 100px;
+            background: #FFB9B9;
+            border-radius: 8px;
+        }
+
+        .right-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 8px;
+            gap: 8px;
+            width: 172px;
+            height: 100px;
+        }
+
+        .text {
+            font-family: 'Inter';
+            font-weight: 400;
+        }
+
+        .highlight-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px 8px;
+            gap: 10px;
+            width: 96px;
+            height: 19px;
+            background: #FFB9B9;
+            border-radius: 2px;
+
+            font-size: 12px;
+            line-height: 15px;
+            color: #FFFFFF;
+        }
+
+        .main-text {
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            line-height: 17px;
+            color: #8B8B8B;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-box"></div>
+        <div class="right-box">
+            <div class="text highlight-text">반가워요!</div>
+            <div class="text main-text">좋은하루보내세요!</div>
+            <div class="text sub-text">날씨가 좋네요!</div>
+        </div>
+    </div>
+</body>
+
+</html>

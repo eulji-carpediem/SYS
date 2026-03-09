@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter';
+        }
+
+        .box {
+            position: absolute;
+            width: 336px;
+            height: 148px;
+            left: 16px;
+            top: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            gap: 8px;
+            background: #FFFFFF;
+            border: 1px solid #C2C2C2;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .login-message {
+            width: 288px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .login-button {
+            width: 288px;
+            height: 48px;
+            background: #17B75E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .login-accs {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 235px;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        .login-acc {
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .divider {
+            width: 1px;
+            height: 14px;
+            background: #D3D5D7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="login-message">사이트를 더 안전하고 편리하게 이용하세요.</div>
+        <div class="login-button">로그인</div>
+        <div class="login-accs">
+            <div class="login-acc">아이디 찾기</div>
+            <div class="divider"></div>
+            <div class="login-acc">비밀번호 찾기</div>
+            <div class="divider"></div>
+            <div class="login-acc">회원가입</div>
+        </div>
+    </div>
+</body>
+
+</html>

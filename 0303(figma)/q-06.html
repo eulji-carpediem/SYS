@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+
+            position: absolute;
+            width: 160px;
+            height: 195px;
+            left: 16px;
+            top: 16px;
+
+            background: #FFFFFF;
+        }
+
+        .circle {
+            width: 160px;
+            height: 160px;
+
+            background: #CA785C;
+            border-radius: 9999px;
+        }
+
+        .profile-circleBox {
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        /* 프로필 텍스트 */
+        .profile {
+            width: 45px;
+            height: 19px;
+
+            font-family: 'Inter';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+        }
+
+        .profile-txtBox {
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-circleBox">
+            <div class="circle"></div>
+        </div>
+        <div class="profile-txtBox">
+            <div class="profile">프로필</div>
+        </div>
+    </div>
+</body>
+
+</html>
