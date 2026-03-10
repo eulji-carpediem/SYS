@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .origin {
+            background-color: skyblue;
+            border: 1px solid blue;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 5px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class="origin" id="target1">삭제될 항목1</p>
+        <p class="origin" id="target2">삭제될 항목2</p>
+        <p class="origin" id="target3">삭제될 항목3</p>
+        <p class="origin" id="target4">삭제될 항목4</p>
+    </div>
+
+    <button onclick="remove1();">첫 번째 삭제</button>
+    <button onclick="remove2();">두 번째 삭제</button>
+    <button onclick="remove3();">세 번째 삭제</button>
+    <button onclick="remove4();">네 번째 삭제</button>
+
+    <script>
+        const $target1 = document.getElementById("target1");
+        const $target2 = document.getElementById("target2");
+        const $target3 = document.getElementById("target3");
+        const $target4 = document.getElementById("target4");
+
+        function remove1() {
+            $target1.remove();
+        }
+
+        function remove2() {
+            $target2.remove();
+        }
+
+        function remove3() {
+            $target3.remove();
+        }
+
+        function remove4() {
+            $target4.remove();
+        }
+    </script>
+</body>
+
+</html>

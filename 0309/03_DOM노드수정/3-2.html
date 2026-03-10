@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 3px solid gray;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .box {
+            border: 3px solid blue;
+            background-color: #fff;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .yellow {
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 3px;
+            margin: 2px;
+        }
+
+        button {
+            padding: 5px 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="target">
+            <span>기존 자식1</span>
+            <span>기존 자식2</span>
+        </div>
+        <p>다른 형제 요소</p>
+    </div>
+
+    <div>
+        <button onclick="befTest();">before() 테스트</button>
+        <button onclick="aftTest();">after() 테스트</button>
+        <button onclick="preTest();">prepend() 테스트</button>
+        <button onclick="appTest();">append() 테스트</button>
+        <button onclick="appCTest();">appendChild() 테스트</button>
+        <button onclick="Strtest();">문자열 삽입 비교</button>
+    </div>
+
+    <script>
+        const $target = document.getElementById("target");
+
+        function befTest() {
+            const $newE = document.createElement("div");
+            $newE.textContent = "before()로 추가된 요소";
+            $newE.className = "yellow";
+            $target.before($newE);
+        }
+
+        function aftTest() {
+            const $newE = document.createElement("div");
+            $newE.textContent = "after()로 추가된 요소";
+            $newE.className = "yellow";
+            $target.after($newE);
+        }
+
+        function preTest() {
+            const $newE = document.createElement("div");
+            $newE.textContent = "prepend()로 추가된 요소";
+            $newE.className = "yellow";
+            $target.prepend($newE);
+        }
+
+        function appTest() {
+            const $newE = document.createElement("div");
+            $newE.textContent = "append()로 추가된 요소";
+            $newE.className = "yellow";
+            $target.append($newE);
+        }
+
+        function appCTest() {
+            const $newE = document.createElement("div");
+            $newE.textContent = "appendChild()로 추가된 요소";
+            $newE.className = "yellow";
+            $target.appendChild($newE);
+        }
+
+        function Strtest() {
+            $target.append("append()로 추가된 문자열");
+            $target.prepend("prepend()로 추가된 문자열");
+        }
+    </script>
+</body>
+
+</html>

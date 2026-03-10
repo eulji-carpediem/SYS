@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 3px solid blue;
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .origin {
+            background-color: red;
+            color: #fff;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .new {
+            background-color: green;
+            color: #fff;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 5px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <p class="origin" id="child1">교체될 자식1</p>
+        <p class="origin" id="child2">교체될 자식2</p>
+        <p class="origin" id="child3">교체될 자식3</p>
+    </div>
+
+    <button onclick="replace1();">첫 번째 교체</button>
+    <button onclick="replace2();">두 번째 교체</button>
+    <button onclick="replace3();">세 번째 교체</button>
+
+    <script>
+        const $container = document.getElementById("container");
+
+        function replace1() {
+            const $oldChild = document.getElementById("child1");
+            const $newChild = document.createElement("div");
+            $newChild.textContent = "새로운 첫 번째 자식";
+            $newChild.className = "new";
+
+            $container.replaceChild($newChild, $oldChild);
+        }
+
+        function replace2() {
+            const $oldChild = document.getElementById("child2");
+            const $newChild = document.createElement("span");
+            $newChild.textContent = "새로운 두 번째 자식";
+            $newChild.className = "new";
+
+            $container.replaceChild($newChild, $oldChild);
+        }
+
+        function replace3() {
+            const $oldChild = document.getElementById("child3");
+            const $newChild = document.createElement("h3");
+            $newChild.textContent = "새로운 세 번째 자식";
+            $newChild.className = "new";
+
+            $container.replaceChild($newChild, $oldChild);
+        }
+    </script>
+</body>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: cornflowerblue;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1">첫 번째 박스입니다.</div>
+    <div class="box" id="box2">두 번째 박스입니다.</div>
+    <p id="message">여기에 메시지가 표시됩니다.</p>
+    <button onclick="changeBox1()">첫 번째 박스 선택</button>
+    <button onclick="changeBox2()">두 번째 박스 선택</button>
+    <button onclick="changeBox3()">메시지 선택</button>
+
+    <script>
+        function changeBox1() {
+            document.getElementById("box1").innerHTML = "첫 번째 박스를 찾았습니다.";
+            document.getElementById("box1").style.backgroundColor = "#ffcccc";
+        }
+        function changeBox2() {
+            document.getElementById("box2").innerHTML = "두 번째 박스를 찾았습니다.";
+            document.getElementById("box2").style.backgroundColor = "#ccffcc";
+        }
+        function changeBox3() {
+            document.getElementById("message").innerHTML = "<b>ID로 요소를 성공적으로 찾았습니다.</b>";
+            document.getElementById("message").style.color = "cornflowerblue";
+        }
+    </script>
+</body>
+
+</html>

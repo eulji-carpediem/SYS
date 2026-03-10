@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>removeChild with $ prefix</title>
+    <style>
+        .container {
+            border: 3px solid darkred;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .origin {
+            background-color: lightcoral;
+            border: 1px solid darkred;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 5px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <p class="origin" id="child1">삭제할 자식1</p>
+        <p class="origin" id="child2">삭제할 자식2</p>
+        <p class="origin" id="child3">삭제할 자식3</p>
+        <p class="origin" id="child4">삭제할 자식4</p>
+    </div>
+
+    <button onclick="remove1();">첫 번째 자식 삭제</button>
+    <button onclick="remove2();">두 번째 자식 삭제</button>
+    <button onclick="remove3();">세 번째 자식 삭제</button>
+    <button onclick="remove4();">네 번째 자식 삭제</button>
+
+    <script>
+        const $container = document.getElementById("container");
+        const $child1 = document.getElementById("child1");
+        const $child2 = document.getElementById("child2");
+        const $child3 = document.getElementById("child3");
+        const $child4 = document.getElementById("child4");
+
+        function remove1() {
+            $container.removeChild($child1);
+        }
+
+        function remove2() {
+            $container.removeChild($child2);
+        }
+
+        function remove3() {
+            $container.removeChild($child3);
+        }
+
+        function remove4() {
+            $container.removeChild($child4);
+        }
+    </script>
+</body>
+
+</html>

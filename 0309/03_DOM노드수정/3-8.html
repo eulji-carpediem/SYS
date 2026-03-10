@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <style>
+        .origin {
+            background: lightblue;
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid blue;
+        }
+
+        .clone {
+            background: lightgreen;
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid green;
+        }
+
+        .container {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            margin: 6px 4px;
+            padding: 6px 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div id="origin" class="origin">
+            <h3>원본 요소</h3>
+            <p>자식 요소 1</p>
+            <p>자식 요소 2</p>
+        </div>
+    </section>
+
+    <section id="result" class="container">
+        <h3>복제된 요소들이 여기 추가됩니다</h3>
+    </section>
+
+    <div>
+        <button id="btn-flasy" onclick="cloneF();">파라미터 : false</button>
+        <button id="btn-true" onclick="cloneT();">파라미터 : true</button>
+        <button id="btn-clear" onclick="cloneC();">복제본 제거</button>
+    </div>
+
+    <script>
+        const $origin = document.getElementById('origin');
+        const $result = document.getElementById('result');
+
+        function cloneF() {
+            const $clone = $origin.cloneNode(false);
+            $clone.classList.remove('origin');
+            $clone.classList.add('clone');
+            $clone.textContent = '파라미터 : false';
+            $result.appendChild($clone);
+        }
+
+        function cloneT() {
+            const $clone = $origin.cloneNode(true);
+            $clone.classList.remove('origin');
+            $clone.classList.add('clone');
+            $result.appendChild($clone);
+        }
+
+        function cloneC() {
+            const $clones = $result.querySelectorAll('.clone');
+            $clones.forEach($node => $node.remove());
+        }
+    </script>
+</body>
+
+</html>
