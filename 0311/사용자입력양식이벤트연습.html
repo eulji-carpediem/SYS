@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .focused {
+            outline: 2px dashed darkblue;
+            background-color: lightblue;
+        }
+
+        .checked-bg {
+            background-color: #ccffcc;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>사용자 입력 양식 이벤트</h2>
+
+    <form name="userInfo">
+
+        <label for="username">이름</label><br>
+        <input type="text" name="username" id="username" placeholder="이름을 입력하세요" required>
+
+        <br><br>
+
+        <label for="useremail">이메일</label><br>
+        <input type="email" name="useremail" id="useremail" placeholder="example@email.com" required>
+
+        <br><br>
+
+        <label>성별</label><br>
+        <input type="radio" name="gender" id="male" value="m"><label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="f"><label for="female">여자</label>
+
+        <br><br>
+
+        <label for="date">참여 일자 선택 </label><br>
+        <select name="date" id="date">
+            <option value="default">--날짜 선택--</option>
+            <option value="260311">2026년 03월 11일</option>
+            <option value="260312">2026년 03월 12일</option>
+            <option value="260313">2026년 03월 13일</option>
+        </select>
+
+        <br><br>
+
+        <label for="request">요청사항</label><br>
+        <textarea name="request" id="request" rows="5" cols="50" style="resize: none;" maxlength="500"
+            oninput="checkLength(this)" placeholder="요청 사항을 입력하세요"></textarea><br>
+        <span id="count">0</span>/500자
+
+        <br><br>
+
+        <label id="agreeLabel"><input type="checkbox" id="agree" required> 개인정보 수집에 동의합니다.</label>
+
+        <br><br>
+
+        <input type="submit" value="신청하기">
+    </form>
+
+
+    <script>
+        const $form = document.forms.userInfo;
+        const $username = document.getElementById('username');
+        const $request = document.getElementById('request');
+        const $date = document.getElementById('date');
+        const $agree = document.getElementById('agree');
+        const $agreeLabel = document.getElementById('agreeLabel');
+
+        function checkLength(textarea) {
+            var len = textarea.value.length;
+            document.getElementById('count').innerText = len;
+        }
+
+        $form.addEventListener('focusin', (e) => e.target.classList.add('focused'));
+        $form.addEventListener('focusout', (e) => e.target.classList.remove('focused'));
+
+        $request.addEventListener('input', (e) => {
+            let len = e.target.value.trim().length;
+            $form.querySelector('span').textContent = len;
+        });
+
+        $form.addEventListener('submit', (e) => {
+            if ($date.value === "default") {
+                e.preventDefault();
+                alert('참여 일자를 선택해주세요.');
+            }
+        });
+        $agree.addEventListener('change', () => {
+            if ($agree.checked) {
+                $agreeLabel.classList.add('checked-bg');
+            } else {
+                $agreeLabel.classList.remove('checked-bg');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -43,6 +43,22 @@
         <button onclick="changeBox2()">모든 목록 선택</button>
         <button onclick="changeBox3()">첫 번째 문단만 선택</button>
 
+        <script>
+            function changeBox() {
+                document.getElementsByClassName("box").innerHTML = "첫 번째 박스를 찾았습니다.";
+                document.getElementById("box1").style.backgroundColor = "coral";
+            }
+
+            function changeBox2() {
+                var listItem = document.getElementsByTagName("li");
+                for (var i = 0; i < listItem.length; i++) {
+
+                }
+
+            }
+        </script>
+    </ul>
+
 </body>
 
 </html>
