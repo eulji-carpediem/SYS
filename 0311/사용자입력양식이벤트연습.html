@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 50px;
+            padding: 0;
+        }
+
+        form {
+
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
         .focused {
             outline: 2px dashed darkblue;
             background-color: lightblue;
@@ -13,6 +33,17 @@
 
         .checked-bg {
             background-color: #ccffcc;
+        }
+
+        input[type="submit"] {
+            width: 150px;
+            height: 48px;
+            background: #56abff;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #ffffff;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -25,18 +56,15 @@
         <label for="username">이름</label><br>
         <input type="text" name="username" id="username" placeholder="이름을 입력하세요" required>
 
-        <br><br>
 
         <label for="useremail">이메일</label><br>
-        <input type="email" name="useremail" id="useremail" placeholder="example@email.com" required>
+        <input type="email" name="useremail" id="useremail" placeholder="example@domain.com" required>
 
-        <br><br>
-
-        <label>성별</label><br>
-        <input type="radio" name="gender" id="male" value="m"><label for="male">남자</label>
-        <input type="radio" name="gender" id="female" value="f"><label for="female">여자</label>
-
-        <br><br>
+        <label>성별</label>
+        <div>
+            <input type="radio" name="gender" id="male" value="m"><label for="male">남자</label>
+            <input type="radio" name="gender" id="female" value="f"><label for="female">여자</label>
+        </div>
 
         <label for="date">참여 일자 선택 </label><br>
         <select name="date" id="date">
@@ -46,18 +74,13 @@
             <option value="260313">2026년 03월 13일</option>
         </select>
 
-        <br><br>
-
         <label for="request">요청사항</label><br>
         <textarea name="request" id="request" rows="5" cols="50" style="resize: none;" maxlength="500"
-            oninput="checkLength(this)" placeholder="요청 사항을 입력하세요"></textarea><br>
+            placeholder="요청 사항을 입력하세요"></textarea><br>
         <span id="count">0</span>/500자
-
-        <br><br>
 
         <label id="agreeLabel"><input type="checkbox" id="agree" required> 개인정보 수집에 동의합니다.</label>
 
-        <br><br>
 
         <input type="submit" value="신청하기">
     </form>
@@ -70,11 +93,6 @@
         const $date = document.getElementById('date');
         const $agree = document.getElementById('agree');
         const $agreeLabel = document.getElementById('agreeLabel');
-
-        function checkLength(textarea) {
-            var len = textarea.value.length;
-            document.getElementById('count').innerText = len;
-        }
 
         $form.addEventListener('focusin', (e) => e.target.classList.add('focused'));
         $form.addEventListener('focusout', (e) => e.target.classList.remove('focused'));
